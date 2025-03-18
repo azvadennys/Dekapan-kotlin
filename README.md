@@ -63,10 +63,10 @@ For any issues or questions, feel free to contact us at azvadenis@gmail.com.
 ## Preview
 | Splash Screen        | Home Screen | Predict Screen     |
 |-------------------|-------------------|-------------------|
-|![Screenshot_20250318_102853](https://github.com/user-attachments/assets/cb71734e-164e-44d7-a761-48b52b01528c) | ![Screenshot_20250318_102836](https://github.com/user-attachments/assets/b5b0da01-5326-4400-94b1-e8b9b8c9bf62)|![Screenshot_20250318_103115](https://github.com/user-attachments/assets/df30e92c-84ce-41a8-b147-3b1b6b204cf3) |
+|![Screenshot_20250318_102853](https://github.com/user-attachments/assets/cb71734e-164e-44d7-a761-48b52b01528c) | ![image](https://github.com/user-attachments/assets/ba1fb34b-a125-4cb7-97b0-5cc1f820f624)|![image](https://github.com/user-attachments/assets/6efb8819-3344-44f4-9cc3-c604c9898f32)|
 
 | Result Predict       | List Plant | Detail List Plant |
 |-------------------|-------------------|-------------------|
-| ![Screenshot_20250318_103217](https://github.com/user-attachments/assets/a3409344-ef13-4a90-af22-661e1a469157)| ![Screenshot_20250318_103226](https://github.com/user-attachments/assets/46aad1b3-4041-4d8e-b09a-6a66cdc3f65b) | ![Screenshot_20250318_103233](https://github.com/user-attachments/assets/87cb849d-a6a5-4e5c-96b4-dfac743b1f77)|
+|![image](https://github.com/user-attachments/assets/99f01a40-7641-48c9-915c-1c66459e5c29) | ![image](https://github.com/user-attachments/assets/52727b48-d533-480e-b8da-c4ebd78afb28) |![image](https://github.com/user-attachments/assets/424489c7-c7fc-43d1-8373-470cfe5ce07b)|
 
 
