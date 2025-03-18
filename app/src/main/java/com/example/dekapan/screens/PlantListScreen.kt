@@ -1,5 +1,6 @@
 package com.example.dekapan.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,6 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -21,7 +23,8 @@ data class Plant(val name: String, val description: String)
 @Composable
 fun PlantListScreen() {
     val plants = listOf(
-        "Bean Rust", "Angular Leaf Spot", "Yellow Mosaic", "Powdery Mildew", "Leaf Crinkle"
+        "Angular Leaf Spot", "Bean Rust", "Healthy",
+        "Leaf Crinkle","Powdery Mildew", "Yellow Mosaic"
     )
 
     // State untuk menyimpan kondisi apakah card sedang diperluas atau tidak
@@ -61,6 +64,23 @@ fun PlantListScreen() {
                     if (isExpanded) {
                         Spacer(modifier = Modifier.height(8.dp))
 
+                        // Menampilkan gambar di atas teks penyakit
+                        val imageResource = DiseaseInfo.getDiseaseImage(plant)
+                        if (imageResource != null) {
+                            Image(
+                                painter = painterResource(id = imageResource),
+                                contentDescription = "Gambar $plant",
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(200.dp)
+                            )
+
+                            Spacer(modifier = Modifier.height(8.dp))
+                        }
+
+
+                        Spacer(modifier = Modifier.height(8.dp))
+
                         Text(
                             text = DiseaseInfo.getDiseaseDetail(plant),
                             style = MaterialTheme.typography.bodyMedium,
@@ -70,19 +90,19 @@ fun PlantListScreen() {
 
                         Spacer(modifier = Modifier.height(8.dp))
 
-                        Text(
-                            text = "Solusi:",
-                            style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
-                            modifier = Modifier.fillMaxWidth(),
-                            textAlign = TextAlign.Start
-                        )
-
-                        Text(
-                            text = DiseaseInfo.getSolutionDetail(plant),
-                            style = MaterialTheme.typography.bodyMedium,
-                            modifier = Modifier.fillMaxWidth(),
-                            textAlign = TextAlign.Justify // Rata kiri-kanan
-                        )
+//                        Text(
+//                            text = "Solusi:",
+//                            style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
+//                            modifier = Modifier.fillMaxWidth(),
+//                            textAlign = TextAlign.Start
+//                        )
+//
+//                        Text(
+//                            text = DiseaseInfo.getSolutionDetail(plant),
+//                            style = MaterialTheme.typography.bodyMedium,
+//                            modifier = Modifier.fillMaxWidth(),
+//                            textAlign = TextAlign.Justify // Rata kiri-kanan
+//                        )
                     }
                 }
             }

@@ -150,13 +150,13 @@ fun CameraScreen() {
         Spacer(modifier = Modifier.height(24.dp))
 
 // Disease details & solution details (justify)
-        Text(
-            text = diseaseDetails,
-            style = MaterialTheme.typography.bodyLarge,
-            textAlign = TextAlign.Justify, // Rata kiri-kanan (justify)
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(modifier = Modifier.height(24.dp))
+//        Text(
+//            text = diseaseDetails,
+//            style = MaterialTheme.typography.bodyLarge,
+//            textAlign = TextAlign.Justify, // Rata kiri-kanan (justify)
+//            modifier = Modifier.fillMaxWidth()
+//        )
+//        Spacer(modifier = Modifier.height(24.dp))
 
         Text(
             text = solutionDetails,
@@ -213,25 +213,16 @@ fun classifyImage(context: Context, image: Bitmap): Pair<String, Int> {
     val outputs = model.process(inputFeature0)
     val outputFeature0 = outputs.outputFeature0AsTensorBuffer
     val confidences = outputFeature0.floatArray
-    // Logging hasil confidence setiap kelas
-    confidences.forEachIndexed { index, confidence ->
-        Log.d("ML_OUTPUT", "Class $index: $confidence")
-    }
 
     // Menentukan hasil dengan probabilitas tertinggi
     val maxIndex = confidences.indices.maxByOrNull { confidences[it] } ?: -1
     // Mengonversi confidence score ke persen
     val confidencePercentage = if (maxIndex != -1) (confidences[maxIndex] * 100).toInt() else 0
-
-    // Logging hasil deteksi
-    Log.d("ML_OUTPUT", "Predicted Class Index: $maxIndex")
-    Log.d("ML_OUTPUT", "Confidence Score: ${confidences[maxIndex]}")
     val classLabels = arrayOf(
         "Angular Leaf Spot", "Bean Rust", "Healthy",
         "Leaf Crinkle","Powdery Mildew", "Yellow Mosaic"
     )
     val detectedClass = if (maxIndex in classLabels.indices) classLabels[maxIndex] else "Unknown"
-    Log.d("ML_OUTPUT", "Detected Class: $detectedClass")
     model.close()
 
     return Pair(detectedClass, confidencePercentage)
