@@ -60,6 +60,9 @@ This application uses TensorFlow Lite for fast, on-device predictions. The model
 ## Contact
 For any issues or questions, feel free to contact us at azvadenis@gmail.com.
 
+## Download APK
+[Link Download App Dekapan (Deteksi Kacang Panjang)](https://drive.google.com/file/d/1L5iCy585scSPnV6Vi13MNnMDXf0REVAO/view?usp=sharing)
+
 ## Preview
 | Splash Screen        | Home Screen | Predict Screen     |
 |-------------------|-------------------|-------------------|
