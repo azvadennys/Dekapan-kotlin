@@ -201,9 +201,9 @@ fun classifyImage(context: Context, image: Bitmap): Pair<String, Int> {
     for (i in 0 until 224) {
         for (j in 0 until 224) {
             val value = intValues[pixel++]
-            byteBuffer.putFloat(((value shr 16 and 0xFF) / 255.0f))
-            byteBuffer.putFloat(((value shr 8 and 0xFF) / 255.0f))
-            byteBuffer.putFloat(((value and 0xFF) / 255.0f))
+            byteBuffer.putFloat((value shr 16 and 0xFF).toFloat())  // Red
+            byteBuffer.putFloat((value shr 8 and 0xFF).toFloat())   // Green
+            byteBuffer.putFloat((value and 0xFF).toFloat())         // Blue
         }
     }
 
